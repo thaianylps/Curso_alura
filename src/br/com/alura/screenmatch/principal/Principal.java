@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.principal;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Episodio;
@@ -10,10 +12,9 @@ import java.util.stream.LongStream;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme("marvel");
+        Filme meuFilme = new Filme("marvel", 2000);
 
         //meuFilme.setNome("marvel");
-        meuFilme.setAnoDeLancamento(2000);
         meuFilme.setDuracaoEmMinutos(180);
         meuFilme.setIncluidoNoPlano(true);
         System.out.println("Duração do Filme : " + meuFilme.getDuracaoEmMinutos());
@@ -32,18 +33,15 @@ public class Principal {
         //System.out.println("Total de avaliações: "  + meuFilme.getTotalDeAvaliacao());
 
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost",2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodioPorTemporada(10);
         lost.setMinutosPorEpisidio(50);
         System.out.println("Duração para maratonar LOST : " + lost.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme("Avatar");
+        Filme outroFilme = new Filme("Avatar",2023);
         //outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
         outroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
@@ -65,10 +63,9 @@ public class Principal {
         filtro.filtra(primeiro);
         filtro.filtra(meuFilme);
 
-        var filmeDaThay = new Filme("Rei leao");
+        var filmeDaThay = new Filme("Rei leao",2000);
         filmeDaThay.setDuracaoEmMinutos(200);
         //filmeDaThay.setNome("A fabrica de chocolate");
-        filmeDaThay.setAnoDeLancamento(2000);
         filmeDaThay.avalia(10);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
