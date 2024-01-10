@@ -7,7 +7,7 @@ import br.com.alura.screenmatch.modelos.Titulo;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class PrincipaComListas {
+public class PrincipalComListas {
     public static void main(String[] args) {
         Filme meuFilme = new Filme("marvel", 2000);
         meuFilme.avalia(9);
