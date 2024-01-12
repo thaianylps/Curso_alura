@@ -20,7 +20,7 @@ public class PrincipalComBusca {
 
         var busca = leitura.nextLine();
 
-        String endereco = "https://www.omdbapi.com/?t=" + busca + "";
+        String endereco = "https://www.omdbapi.com/?t=" + busca + ".....";
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
