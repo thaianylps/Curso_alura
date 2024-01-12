@@ -2,6 +2,8 @@ package br.com.alura.screenmatch.modelos;
 
 import com.google.gson.annotations.SerializedName;
 
+
+
 public class Titulo implements Comparable<Titulo> {
 
     @SerializedName("Title")
@@ -25,7 +27,7 @@ public class Titulo implements Comparable<Titulo> {
         System.out.println("Incluido no plano : "+ incluidoNoPlano);
     }
     public void avalia(double nota){
-        somaDasAvaliacoes +=nota;
+        somaDasAvaliacoes += nota;
         totalDeAvaliacao ++;
     }
     public double pegaMedia(){
