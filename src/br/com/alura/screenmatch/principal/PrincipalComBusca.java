@@ -1,6 +1,7 @@
 package br.com.alura.screenmatch.principal;
 
 //import br.com.alura.screenmatch.modelos.Titulo;
+import br.com.alura.screenmatch.modelos.Titulo;
 import br.com.alura.screenmatch.modelos.TituloOmdb;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -20,7 +21,7 @@ public class PrincipalComBusca {
 
         var busca = leitura.nextLine();
 
-        String endereco = "https://www.omdbapi.com/?t=" + busca + ".....";
+        String endereco = "https://www.omdbapi.com/?t=" + busca + "&apikey=de646d8";
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
@@ -37,5 +38,17 @@ public class PrincipalComBusca {
         //Titulo meuTitulo = gson.fromJson(json, Titulo.class);
         TituloOmdb meuTituloOmbdb = gson.fromJson(json, TituloOmdb.class);
         System.out.println(meuTituloOmbdb);
+
+        try{
+            Titulo meuTitulo = new Titulo(meuTituloOmbdb);
+            System.out.println("Titulo convertido");
+            System.out.println(meuTitulo);//peguei um dado e trasnformei aqui
+        } catch (NumberFormatException e){
+            System.out.println("aconteceu um erro ");
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("O programa finalizou corretamente!");
+
     }
 }
