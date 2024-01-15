@@ -49,6 +49,5 @@ public class PrincipalComBusca {
         }
 
         System.out.println("O programa finalizou corretamente!");
-
     }
 }
