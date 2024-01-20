@@ -38,7 +38,7 @@ public class PrincipalComBusca {
                 break;
             }
 
-            String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "";
+            String endereco = "https://www.omdbapi.com/?t=" + busca.replace(" ", "+") + "&apikey=de646d8";
             try {
                 HttpClient client = HttpClient.newHttpClient();
                 HttpRequest request = HttpRequest.newBuilder()
@@ -72,9 +72,10 @@ public class PrincipalComBusca {
         }
         System.out.println(titulos);
 
-        FileWriter escrita = new FileWriter("filmes.json");
+        /*FileWriter escrita = new FileWriter("filmes.json");
         escrita.write(gson.toJson(titulos));
         escrita.close();
         System.out.println("O programa finalizou corretamente!");
+         */
     }
 }
